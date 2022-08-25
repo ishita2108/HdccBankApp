@@ -1,0 +1,44 @@
+package com.hdcc.entity;
+
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.UUID;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString
+@NoArgsConstructor
+@Entity
+@Table(name="Customers")
+public class Customer {
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private Integer id;
+	private String name;
+	private String permanentAddress;
+	private String currentAddress;
+	private String contactDetails;
+	private String email;
+	private String occupation;
+	private Date DOB;
+	private String panNo;
+	private String aadharNo;
+	private String passportNo;
+	private String kycNo;
+	
+	@OneToMany(mappedBy = "acc", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Account> accounts = new ArrayList<Account>();
+
+}

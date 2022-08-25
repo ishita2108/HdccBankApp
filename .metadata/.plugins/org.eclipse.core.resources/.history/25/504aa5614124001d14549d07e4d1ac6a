@@ -1,0 +1,9 @@
+package com.hdcc.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.hdcc.entity.Customer;
+
+public interface CustomerRepo extends JpaRepository<Customer, Integer> {
+
+}

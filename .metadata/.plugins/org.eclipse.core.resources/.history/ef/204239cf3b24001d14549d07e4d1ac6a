@@ -1,0 +1,18 @@
+package com.hdcc.services;
+
+import org.springframework.stereotype.Service;
+
+import com.hdcc.repository.CustomerRepo;
+
+@Service
+public class AccountService {
+	
+	private CustomerRepo customerRepo;
+
+	public AccountService(CustomerRepo customerRepo) {
+		this.customerRepo = customerRepo;
+	}
+	
+	
+
+}

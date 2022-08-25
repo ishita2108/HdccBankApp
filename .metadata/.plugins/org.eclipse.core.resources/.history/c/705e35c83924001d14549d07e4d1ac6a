@@ -1,0 +1,5 @@
+package com.hdcc.entity;
+
+public class Account {
+
+}
