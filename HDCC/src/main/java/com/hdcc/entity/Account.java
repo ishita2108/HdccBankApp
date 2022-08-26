@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import com.hdcc.dto.AccountDto;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,6 +25,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @Entity
+@Data
 @Table(name="Accounts")
 public class Account {
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -31,13 +33,11 @@ public class Account {
 	private String accountNo= UUID.randomUUID().toString();
 	private BigDecimal balance;
 	
-//	@ManyToOne
-//	private Customer customer;
+	@ManyToOne
+	private Customer customer;
 	
 	public static Account from(AccountDto accountDto) {
 		Account account = new Account();
-		account.setId(accountDto.getId());
-		account.setAccountNo(accountDto.getAccountNo());
 		account.setBalance(accountDto.getBalance());
 		return account;
 	}

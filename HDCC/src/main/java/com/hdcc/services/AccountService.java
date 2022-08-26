@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hdcc.entity.Account;
-import com.hdcc.entity.Customer;
 import com.hdcc.exceptions.CustomerNotFoundException;
 import com.hdcc.repository.AccountRepo;
 

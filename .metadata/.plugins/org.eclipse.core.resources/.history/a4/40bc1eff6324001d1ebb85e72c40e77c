@@ -1,0 +1,10 @@
+package com.hdcc.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+
+public class CustomerController {
+	
+	@Value("${uploadDir}")
+	private String uploadFolder;
+
+}

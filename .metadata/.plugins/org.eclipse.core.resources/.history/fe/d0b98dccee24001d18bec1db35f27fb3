@@ -1,0 +1,21 @@
+package com.hdcc.dto;
+
+import java.util.Date;
+
+import lombok.Data;
+
+@Data
+public class PlainCustomerDto {
+	private int id;
+	private String name;
+	private String permanentAddress;
+	private String currentAddress;
+	private String contactDetails;
+	private String email;
+	private String occupation;
+	private Date DOB;
+	private String panNo;
+	private String aadharNo;
+	private String passportNo;
+	private String kycNo;
+}

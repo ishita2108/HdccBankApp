@@ -1,0 +1,16 @@
+
+
+
+{
+    "name": "Ishita Arora",
+    "permanentAddress": "Nainpur",
+    "currentAddress": "Nainpur",
+    "contactDetails": "7389768723",
+    "email": "ishita.arora@oracle.com",
+    "occupation": "Consultant",
+    "DOB": "1999/08/21",
+    "panNo": "COCPA4201D",
+    "aadharNo": "928329946118",
+    "passportNo": "98757654",
+    "kycNo": "34532678653490",
+}

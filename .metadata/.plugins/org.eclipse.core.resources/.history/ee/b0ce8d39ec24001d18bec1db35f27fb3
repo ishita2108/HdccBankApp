@@ -1,0 +1,9 @@
+package com.hdcc.exceptions;
+
+public class AccountIsAlreadyAssignedException extends RuntimeException{
+	
+	public AccountIsAlreadyAssignedException(final Integer accid, final Integer cid) {
+		
+	}
+
+}
