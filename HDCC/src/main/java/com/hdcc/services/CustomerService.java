@@ -1,12 +1,15 @@
 package com.hdcc.services;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.hdcc.entity.Account;
 import com.hdcc.entity.Customer;
@@ -19,11 +22,16 @@ public class CustomerService {
 	
 	private CustomerRepo customerRepo;
 	private AccountService accountService;
+	//private FileService fileService;
+	
+//	@Value("${project.image}")
+//	private String path;
 	
 	@Autowired
 	public CustomerService(CustomerRepo customerRepo, AccountService accountService) {
 		this.customerRepo = customerRepo;
 		this.accountService = accountService;
+		//this.fileService = fileService;
 	}
 	
 	public Customer addCustomer(Customer customer) {
@@ -48,4 +56,10 @@ public class CustomerService {
 		customer.addAccount(account);
 		return customer;
 	}
+//	public Customer uploadCustomerImage(int cid, MultipartFile image) throws IOException{
+//		Customer customer = getCustomer(cid);
+//		String fileName = fileService.uploadImage(path, image);
+//		customer.setFileName(fileName);
+//		return customer;
+//		}
 }

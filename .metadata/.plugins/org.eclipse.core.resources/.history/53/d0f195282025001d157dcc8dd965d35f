@@ -1,0 +1,10 @@
+package com.hdcc.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.hdcc.entity.UploadPassportPicture;
+
+@Repository
+public interface UploadPassportPictureRepo extends JpaRepository<UploadPassportPicture, String>{
+
+}

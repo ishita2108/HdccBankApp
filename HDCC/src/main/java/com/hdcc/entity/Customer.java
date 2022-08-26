@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -23,8 +24,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
 @AllArgsConstructor
 @ToString
 @NoArgsConstructor
@@ -41,13 +40,13 @@ public class Customer {
 	private String email;
 	private String occupation;
 	@JsonFormat(pattern = "yyyy/MM/dd")
-	private Date DOB;
+	private Date dob;
 	private String panNo;
 	private String aadharNo;
 	private String passportNo;
 	private String kycNo;
-//	@Lob
-//	private byte[] image;
+	private String fileName;
+
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id")
@@ -65,11 +64,12 @@ public class Customer {
 		customer.setContactDetails(customerDto.getContactDetails());
 		customer.setEmail(customerDto.getEmail());
 		customer.setOccupation(customerDto.getOccupation());
-		customer.setDOB(customerDto.getDOB());
+		customer.setDob(customerDto.getDob());
 		customer.setPanNo(customerDto.getPanNo());
 		customer.setAadharNo(customerDto.getAadharNo());
 		customer.setPassportNo(customerDto.getPassportNo());
 		customer.setKycNo(customerDto.getKycNo());
+		//customer.setFileName(customerDto.getFileName());
 		//customer.setAccounts(customerDto.getAccountsDto());
 		return customer;
 	}

@@ -1,0 +1,5 @@
+package com.hdcc.controller;
+
+public class UploadPassportPictureController {
+
+}

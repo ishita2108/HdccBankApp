@@ -14,7 +14,7 @@ public class AccountDto {
 	private int id;
 	private String accountNo= UUID.randomUUID().toString();
 	private BigDecimal balance;
-	private PlainCustomerDto plainCustomerDto;
+	//private PlainCustomerDto plainCustomerDto;
 	
 	
 	public static AccountDto from(Account account) {
@@ -22,9 +22,9 @@ public class AccountDto {
 		accountDto.setId(account.getId());
 		accountDto.setAccountNo(account.getAccountNo());
 		accountDto.setBalance(account.getBalance());
-		if(Objects.nonNull(account.getCustomer())) {
-			accountDto.setPlainCustomerDto(PlainCustomerDto.from(account.getCustomer()));
-		}
+//		if(Objects.nonNull(account.getCustomer())) {
+//			accountDto.setPlainCustomerDto(PlainCustomerDto.from(account.getCustomer()));
+//		}
 		return accountDto;
 		
 	}

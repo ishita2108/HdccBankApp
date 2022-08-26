@@ -1,5 +1,8 @@
 
 
+{
+    "balance":9807.65
+}
 
 {
     "name": "Ishita Arora",
@@ -8,9 +11,23 @@
     "contactDetails": "7389768723",
     "email": "ishita.arora@oracle.com",
     "occupation": "Consultant",
-    "DOB": "1999/08/21",
+    "dob": "1999/08/21",
     "panNo": "COCPA4201D",
     "aadharNo": "928329946118",
     "passportNo": "98757654",
     "kycNo": "34532678653490",
+}
+
+{
+    "name": "Vidhi",
+    "permanentAddress": "Delhi",
+    "currentAddress": "Delhi",
+    "contactDetails": "9876095643",
+    "email": "vd@gmail.com",
+    "occupation": "Business",
+    "dob": "1987/12/31",
+    "panNo": "COCPA3201E",
+    "aadharNo": "123456788",
+    "passportNo": "208283773",
+    "kycNo": "12457654896579"
 }

@@ -1,0 +1,14 @@
+package com.hdcc.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hdcc.services.UploadPassportPictureService;
+
+@RestController
+@RequestMapping("/image")
+public class UploadPassportPictureController {
+	
+	private UploadPassportPictureService uploadPassportPictureService;
+
+}
