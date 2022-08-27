@@ -22,16 +22,16 @@ public class CustomerService {
 	
 	private CustomerRepo customerRepo;
 	private AccountService accountService;
-	//private FileService fileService;
+	private FileService fileService;
 	
-//	@Value("${project.image}")
-//	private String path;
+	@Value("${project.image}")
+	private String path;
 	
 	@Autowired
-	public CustomerService(CustomerRepo customerRepo, AccountService accountService) {
+	public CustomerService(CustomerRepo customerRepo, AccountService accountService,FileService fileService) {
 		this.customerRepo = customerRepo;
 		this.accountService = accountService;
-		//this.fileService = fileService;
+		this.fileService = fileService;
 	}
 	
 	public Customer addCustomer(Customer customer) {
@@ -56,10 +56,11 @@ public class CustomerService {
 		customer.addAccount(account);
 		return customer;
 	}
-//	public Customer uploadCustomerImage(int cid, MultipartFile image) throws IOException{
-//		Customer customer = getCustomer(cid);
-//		String fileName = fileService.uploadImage(path, image);
-//		customer.setFileName(fileName);
-//		return customer;
-//		}
+	@Transactional
+	public Customer uploadCustomerImage(int cid, MultipartFile image) throws IOException{
+		Customer customer = getCustomer(cid);
+		String fileName = fileService.uploadImage(path, image);
+		customer.setFileName(fileName);
+		return customer;	
+		}
 }

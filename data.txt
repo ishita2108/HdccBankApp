@@ -15,7 +15,7 @@
     "panNo": "COCPA4201D",
     "aadharNo": "928329946118",
     "passportNo": "98757654",
-    "kycNo": "34532678653490",
+    "kycNo": "34532678653490"
 }
 
 {
@@ -31,3 +31,30 @@
     "passportNo": "208283773",
     "kycNo": "12457654896579"
 }
+
+http://localhost:8090/hdccapp/customers/image/upload/cid   --- image
+
+http://localhost:8090/hdccapp/accounts
+
+http://localhost:8090/hdccapp/customers
+
+http://localhost:8090/hdccapp/customers/cid/accounts/accid/add  --- account add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

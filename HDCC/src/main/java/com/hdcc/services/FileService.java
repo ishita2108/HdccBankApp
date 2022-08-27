@@ -27,15 +27,8 @@ public class FileService {
 			f.mkdir();
 		}
 		Files.copy(file.getInputStream(), Paths.get(filePath));
-		
+		System.out.println(fileName1);
 		return fileName1;
 	}
 	
-//	public InputStream getResource(String path, String fileName) throws FileNotFoundException{
-//		String fullPath = path+File.separator+fileName;
-//		InputStream is = new FileInputStream(fullPath);
-//		System.out.println(is);
-//		return is;
-//		
-//	}
 }

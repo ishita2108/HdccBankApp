@@ -31,7 +31,7 @@ public class AccountController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<AccountDto> addAccount(@RequestBody final AccountDto accountDto){
+	public ResponseEntity<AccountDto> addAccount(@RequestBody AccountDto accountDto){
 		Account account = accountService.addAccount(Account.from(accountDto));
 		return new ResponseEntity<>(AccountDto.from(account), HttpStatus.CREATED);
 	}
@@ -45,7 +45,7 @@ public class AccountController {
 	
 	
 	@GetMapping(value ="{id}")
-	public ResponseEntity<AccountDto> getAccount(@PathVariable final Integer id){
+	public ResponseEntity<AccountDto> getAccount(@PathVariable  Integer id){
 		Account account = accountService.getAccount(id);
 		return new ResponseEntity<>(AccountDto.from(account), HttpStatus.OK);
 		

@@ -1,0 +1,5 @@
+package com.hdcc.util;
+
+public class HdccExceptionHandler {
+
+}
