@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,9 +19,7 @@ import com.hdcc.dto.CustomerDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @AllArgsConstructor
@@ -37,13 +35,18 @@ public class Customer {
 	private String permanentAddress;
 	private String currentAddress;
 	private String contactDetails;
+	@Column(unique = true)
 	private String email;
 	private String occupation;
 	@JsonFormat(pattern = "yyyy/MM/dd")
 	private Date dob;
+	@Column(unique = true)
 	private String panNo;
+	@Column(unique = true)
 	private String aadharNo;
+	@Column(unique = true)
 	private String passportNo;
+	@Column(unique = true)
 	private String kycNo;
 	private String fileName;
 

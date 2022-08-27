@@ -1,4 +1,9 @@
+Swagger
+http://localhost:8090/hdccapp/v3/api-docs
+	
+	http://localhost:8090/hdccapp/swagger-ui/index.html
 
+	http://localhost:8090/hdccapp/v3/api-docs.yaml
 
 {
     "balance":9807.65

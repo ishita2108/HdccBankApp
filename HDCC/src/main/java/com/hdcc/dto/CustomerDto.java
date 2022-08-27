@@ -17,7 +17,7 @@ import lombok.Data;
 @Data
 public class CustomerDto {
 	private int id;
-	
+
 	@NotNull(message = "{customer.name.absent}")
 	@Pattern(regexp = "[A-Za-z]+( [A-Za-z]+)*", message = "{customer.name.invalid}")
 	private String name;
