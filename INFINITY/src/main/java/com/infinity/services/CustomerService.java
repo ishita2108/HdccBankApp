@@ -41,6 +41,16 @@ public class CustomerService {
 	public List<Customer> getAllCustomers(){
 		return customerRepo.findAll();
 	}
+	public Customer getCustomerByPanNo(String panNo) {
+		
+		if (customerRepo.findByPanNo(panNo) != null) {
+			return customerRepo.findByPanNo(panNo);
+		}
+		else {
+			throw new CustomerNotFoundException("Pan Card Does not exists");
+		}
+		
+	}
 	
 	public Customer getCustomer(int id) {
 		return customerRepo.findById(id). orElseThrow(()-> new CustomerNotFoundException("Customer with id "+ id + " is not found!!"));

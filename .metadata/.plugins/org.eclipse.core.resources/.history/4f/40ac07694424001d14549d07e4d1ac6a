@@ -1,8 +1,0 @@
-package com.hdcc.dto;
-
-import lombok.Data;
-
-@Data
-public class AccountDto {
-	private
-}

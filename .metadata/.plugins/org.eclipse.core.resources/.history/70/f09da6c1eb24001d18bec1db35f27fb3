@@ -1,5 +1,0 @@
-package com.hdcc.exceptions;
-
-public class AccountIsAlreadyAssignedException {
-
-}

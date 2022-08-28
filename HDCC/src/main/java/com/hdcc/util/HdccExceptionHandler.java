@@ -19,7 +19,7 @@ public class HdccExceptionHandler {
 	public ResponseEntity<ErrorDetails> handle400(MethodArgumentNotValidException ex){
 		ErrorDetails details=new ErrorDetails();
 		details.setDate(LocalDateTime.now());
-		details.setName("team.it@oracle.com");
+		details.setName("team.it@hdcc.com");
 		String errorMessage= ex.getBindingResult().getAllErrors().stream()
 				.map(x-> x.getDefaultMessage())
 				.collect(Collectors.joining(","));
@@ -32,7 +32,7 @@ public class HdccExceptionHandler {
 	public ResponseEntity<ErrorDetails> handle500(Exception ex){
 		ErrorDetails details=new ErrorDetails();
 		details.setDate(LocalDateTime.now());
-		details.setName("team.it@oracle.com");
+		details.setName("team.it@hdcc.com");
 		
 		
 		details.setMessage("some internal server error pls try after some time");
@@ -43,7 +43,7 @@ public class HdccExceptionHandler {
 	public ResponseEntity<ErrorDetails> handle404(Exception ex){
 		ErrorDetails details=new ErrorDetails();
 		details.setDate(LocalDateTime.now());
-		details.setName("team.it@oracle.com");
+		details.setName("team.it@hdcc.com");
 		
 		
 		details.setMessage(ex.getMessage());

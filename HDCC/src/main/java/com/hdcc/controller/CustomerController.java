@@ -1,6 +1,8 @@
 package com.hdcc.controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.hdcc.dto.CustomerDto;
+import com.hdcc.entity.Account;
 import com.hdcc.entity.Customer;
 import com.hdcc.services.CustomerService;
 
@@ -54,6 +57,12 @@ public class CustomerController {
 		return new ResponseEntity<>(CustomerDto.from(customer), HttpStatus.OK);	
 	}
 	
+	@GetMapping(value ="Pan/{panNo}")
+	public ResponseEntity<CustomerDto> getCustomerByPanNo(@PathVariable String panNo){
+		Customer customer = customerService.getCustomerByPanNo(panNo);
+		return new ResponseEntity<>(CustomerDto.from(customer), HttpStatus.OK);	
+	}
+	
 	@PostMapping(value = "{cid}/accounts/{accid}/add")
 	public ResponseEntity<CustomerDto> addAccountToCustomer(@PathVariable  Integer cid, @PathVariable  Integer accid){
 		Customer customer = customerService.addAccountToCustomer(cid, accid);
@@ -66,4 +75,5 @@ public class CustomerController {
 		Customer customer = customerService.uploadCustomerImage(cid, image);
 		return new ResponseEntity<>(CustomerDto.from(customer), HttpStatus.OK);
 		}
+	
 }

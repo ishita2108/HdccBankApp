@@ -8,4 +8,6 @@ import com.hdcc.entity.Customer;
 @Repository
 public interface CustomerRepo extends JpaRepository<Customer, Integer> {
 
+	public Customer findByPanNo(String panNo);
+
 }

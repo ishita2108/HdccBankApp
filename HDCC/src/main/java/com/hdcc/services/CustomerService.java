@@ -1,6 +1,8 @@
 package com.hdcc.services;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
@@ -46,6 +48,15 @@ public class CustomerService {
 		return customerRepo.findById(id). orElseThrow(()-> new CustomerNotFoundException("Customer with id "+ id + " is not found!!"));
 	}
 	
+	public Customer getCustomerByPanNo(String panNo) {
+		if (customerRepo.findByPanNo(panNo) != null) {
+			return customerRepo.findByPanNo(panNo);
+		}
+		else {
+			throw new CustomerNotFoundException("Pan Card Does not exists");
+		}
+	}
+	
 	@Transactional
 	public Customer addAccountToCustomer(int cid, int accid) {
 		Customer customer = getCustomer(cid);
@@ -63,4 +74,6 @@ public class CustomerService {
 		customer.setFileName(fileName);
 		return customer;	
 		}
+	
+	
 }

@@ -47,7 +47,11 @@ public class CustomerController {
 		return new ResponseEntity<>(customersDto, HttpStatus.OK);	
 	}
 	
-	
+	@GetMapping(value ="Pan/{panNo}")
+	public ResponseEntity<CustomerDto> getCustomerByPanNo(@PathVariable String panNo){
+		Customer customer = customerService.getCustomerByPanNo(panNo);
+		return new ResponseEntity<>(CustomerDto.from(customer), HttpStatus.OK);	
+	}
 	@GetMapping(value ="{id}")
 	public ResponseEntity<CustomerDto> getAccount(@PathVariable Integer id){
 		Customer customer = customerService.getCustomer(id);

@@ -1,5 +1,6 @@
 package com.hdcc.entity;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,8 +50,9 @@ public class Customer {
 	@Column(unique = true)
 	private String kycNo;
 	private String fileName;
+	//private BigDecimal aggBalance;
 
-	
+	//Cascade all to delete dependent values as well
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id")
 	private List<Account> accounts = new ArrayList<Account>();
@@ -77,5 +79,7 @@ public class Customer {
 		//customer.setAccounts(customerDto.getAccountsDto());
 		return customer;
 	}
+
+
 
 }

@@ -1,5 +1,6 @@
 package com.hdcc.dto;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +52,7 @@ public class CustomerDto {
 	private String panNo;
 	
 	@NotNull(message = "{customer.aadharNo.absent}")
-	@Pattern(regexp = "^[2-9]{1}[0-9]{3}\\\\s[0-9]{4}\\\\s[0-9]{4}$", message = "{customer.aadharNo.invalid}")
+	@Pattern(regexp = "^\\d{4}\\s\\d{4}\\s\\d{4}$", message = "{customer.aadharNo.invalid}")
 	private String aadharNo;
 	
 	@NotNull(message = "{customer.passportNo.absent}")
@@ -63,6 +64,7 @@ public class CustomerDto {
 	
 	private String fileName;
 	private List<AccountDto> accountsDto = new ArrayList<>();
+	//private BigDecimal aggBalance;
 	
 	public static CustomerDto from(Customer customer) {
 		CustomerDto customerDto = new CustomerDto();
@@ -80,6 +82,7 @@ public class CustomerDto {
 		customerDto.setKycNo(customer.getKycNo());
 		customerDto.setFileName(customer.getFileName());
 		customerDto.setAccountsDto(customer.getAccounts().stream().map(AccountDto::from).collect(Collectors.toList()));
+//		customerDto.setAggBalance(getAccountsDto().
 		return customerDto;
 		
 	}

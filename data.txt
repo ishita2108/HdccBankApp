@@ -46,7 +46,19 @@ http://localhost:8090/hdccapp/customers
 http://localhost:8090/hdccapp/customers/cid/accounts/accid/add  --- account add
 
 
-
+{
+    "name": "Pranjal Khadatkar",
+    "permanentAddress": "Bhopal",
+    "currentAddress": "Bhopal",
+    "contactDetails": "9087975764",
+    "email": "pk@gmail.com",
+    "occupation": "Employee",
+    "dob": "2000/04/03",
+    "panNo": "COCPE5601D",
+    "aadharNo": "5485 5000 8000",
+    "passportNo": "A21 90457",
+    "kycNo": "12458799065234"
+}
 
 
 

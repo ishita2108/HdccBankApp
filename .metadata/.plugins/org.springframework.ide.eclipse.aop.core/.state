@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="INFINITY"/>
 <aop-project name="HDCC"/>
+<aop-project name="CITYBANK"/>
 </aop-reference-model>
